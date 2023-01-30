@@ -1,0 +1,244 @@
+body,div,a{
+    margin: 0;padding: 0;
+}
+h1{
+    margin-top: 100px;
+    font-family: 'Unbounded';
+    font-weight: 800;
+    font-size: 4em;
+    padding-bottom: 50px;
+
+}
+html{
+    padding: 0;padding: 0;
+}
+
+#navmenu{
+    width: 100%;
+    height: 120px;
+    margin-top: 0;padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+}
+
+#icones_menu{
+    width: 25px;
+    height: 50px;
+    padding: 0;margin: 0;
+    padding-right: 35px;
+
+}
+#icones_menu2{
+    width: 25px;
+    padding: 0;margin: 0;
+}
+    
+
+#fechar_menu_estilizacao{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#menu_oculto{
+    width: 30%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    z-index: 1;
+    background-color: #fff;
+    z-index: 3;
+}
+#menu_oculto_botoes{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+}
+
+
+#menu_oculto_botoes ul{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;list-style: none;
+}
+#menu_oculto_botoes ul li{
+    width: 110%;
+    display: flex;
+}
+#menu_oculto_botoes ul li a{
+    
+    font-family: 'Unbounded';
+    font-weight: bold;
+    font-size: 1em;
+    color: #19323C;
+    font-family: 'Signika Negative', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    line-height:30px ;
+    
+
+}
+/*  ---------------------------- --------------------------------------------*/
+#apresentacao{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("pexels-jonathan-borba-14902678.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+
+}
+#apresentacao h1{
+    background-color: rgba(31, 7, 7, 0.337);
+    font-family: 'Unbounded';
+    font-weight: bold;
+    font-size: 2.5em;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.2em 0.5em 0.1em rgba(26, 0, 0, 0.268),
+      -0.3em 0.1em 0.1em rgba(21, 45, 21, 0.205),
+      0.4em -0.3em 0.1em rgba(15, 15, 63, 0.263)}
+    
+   
+
+
+
+#principal{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+};
+
+
+#corpoTabela{
+    display: flex;
+    width: 800px;
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+#menusTabela{
+    display: flex;
+    width: 800px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.tituloSobre{
+    width: 150px; 
+    text-align: center;
+    color: rgb(18, 18, 18);
+    font-size: 1.5em;
+    font-weight:300;
+    font-family: 'Unbounded', cursive;
+    padding: 0 50px;
+}
+
+
+
+#texto{
+    display: flex;
+    align-items:flex-start;
+    width:800px ;
+    height: 200px;
+    background-color: rgb(172, 150, 172);
+    
+    
+
+}
+#texto p{
+    width: 80%;
+    height: auto;
+    font-family: 'Unbounded';
+    font-weight: 200;
+    padding-left: 10px;
+    display: flex;
+}
+/*    ------------------------------------------------------------------------------------------------  */
+
+#servicos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 800px;
+    height: 200px;
+    background:#FCFAF9;
+   margin-bottom: 100px;
+}
+#conteudoServico{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+}
+#botaoVoltar{
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Unbounded';
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: #48E5C2;
+}
+#botaoProsseguir{
+    display: flex;
+    width: 5%;
+    font-family: 'Unbounded';
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: #48E5C2;
+}
+#tituloServico{
+    padding-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Unbounded';
+    font-size: 1em;
+    color: #333333;
+}
+#textoServicos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    font-family: 'Unbounded';
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    color: #5E5E5E;
+}
