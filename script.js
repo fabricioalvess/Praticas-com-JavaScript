@@ -1,123 +1,75 @@
-
-
-// menu_oculto
-
-document.getElementById("abrirMenu").onclick = function(){
-  var abrirMenu = document.getElementById("menu_oculto");
-  abrirMenu.style.right = "0px"; 
-  abrirMenu.style.transition = "right 1s"; 
-
-}
-fechar_menu_estilizacao
-
-document.getElementById("fechar_menu_estilizacao").onclick = function(){
-  var fecharMenu = document.getElementById("menu_oculto");
-  fecharMenu.style.right = "-500px"; 
-  abrirMenu.style.transition = "left 1s"; 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//tituloSobre texto
-
-var sobre = 
+var sobre = [
     {
-        '<p>missao</p>': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo amet quia fugit aliquam totam magni est. Hic nemo pariatur doloremque dicta officiis repudiandae minus voluptatem repellat cumque! Asperiores, aut fuga. ',
-   
-        '<p>visao</p>': 'Mais uma noite como todas as anteriores. Pego minha caneca de café cheia, acendo meu ultimo cigarro e corro pra velha janela do quarto. Observo a noite fria e chuvosa, até parece confortável por um momento, se não fossem as dezenas de preocupações que me desmotivam a cada dia.',
-    
-        '<p>valores</p>':'Penso em você, mesmo sabendo o quão longe está de mim, sinto aquele amor que continua a me desgraçar intensamente a cada dia, e penso quando enfim poderei te ter comigo. Sei lá, o café chega ao fim e trago a ultima ponta, nada muda '
+    "titulo":"Missao",
+    "texto":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    },
+    {
+    "titulo": "Visao",
+    "texto":"t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+    },
+    {
+    "titulo":"Valores",
+    "texto":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."
     }
+]
+//console.log(sobre.missao) seta_sobre_anterior  seta_sobre_frente  sobre_titulo  sobre_texto
+var atual_sobre = 0;
+var ant, fre;
+document.getElementById("seta_sobre_anterior").onclick = function(){
+    if(atual_sobre == 0){
+      ant = sobre.length - 1;    
+    }else{
+       ant = atual_sobre - 1;
+    }
+    document.getElementById("sobre_titulo").innerHTML = "<h1>" + sobre[ant].titulo + "</h1>";
+    document.getElementById("sobre_texto").innerHTML = "<p>"+sobre[ant].texto+"</p>";
+    atual_sobre = ant;
+}
 
-//console.log(sobre[a])
-var tituloSobre = document.getElementsByClassName("tituloSobre");
+document.getElementById("seta_sobre_frente").onclick = function(){
+    if(atual_sobre == sobre.length - 1){
+       fre =  0;    
+    }else{
+       fre = atual_sobre + 1;
+    }
+    document.getElementById("sobre_titulo").innerHTML = "<h1>"+sobre[fre].titulo + "</h1>";
+    document.getElementById("sobre_texto").innerHTML = "<p>"+sobre[fre].texto +"</p>";
+    atual_sobre = fre;
+}
 
-for(var a = 0; a < tituloSobre.length; a ++){
+//
+var servicos ={
+    "<p>web designer</p>":"<p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>",
 
-    tituloSobre[a].onclick = function(){
+    "<p>frontend</p>":"<p>tletters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a </p>",
 
-        for(var b = 0;b < tituloSobre.length; b ++){
-            tituloSobre[b].style["background-color"] = ""
+    "<p>backend</p>":"<p>sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like) </p>",
+}
+
+var unselected_color = "#646872";
+var selected_color = "#2A2D34";
+
+var titulo_servico = document.getElementsByClassName("titulo_servico");
+for(var a = 0; a < titulo_servico.length; a ++){
+    titulo_servico[a].onclick = function(){
+        for(var b = 0; b < titulo_servico.length; b ++){
+            titulo_servico[b].style["background-color"]= "";
+            titulo_servico[b].style["color"] = "black"
+            document.getElementById("texto_servicos").style["background-color"]= selected_color;
+            document.getElementById("texto_servicos").style["color"]= "white";
+            
         }
-
-        this.style["background-color"]= "rgb(172, 150, 172)";
+        this.style["background-color"]= selected_color;
+        this.style["font-weight"]="bold";
+        this.style["color"] = "white";
         
-        var cont = this.innerHTML;
-        document.getElementById("texto").innerHTML = "<p>"+sobre[cont]+"</p>";
-       
+        var chave_selecionada = this.innerHTML;
+        document.getElementById("texto_servicos").innerHTML = servicos[chave_selecionada]
+
     }
-    
 }
 
-//----------------------------------------------------------------------------------------------------
 
-var our_services = [
-    {
-      'title': 'Webdesign',
-      'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.'
-    },
-  
-    {
-      'title': 'Branding',
-      'text': 'Praesent finibus tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.'
-    },
-  
-    {
-      'title': 'Marketing Digital',
-      'text': 'Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus.'
-    }
-    
-  ];
 
-  // botaoVoltar botaoProsseguir   tituloServico textoServicos
 
-  var servico_atual = 0;
-  document.getElementById("botaoVoltar").onclick = function(){
 
-    if(servico_atual == 0){
-        var servico_anterior = our_services.length -1;
-    }else{
-        servico_anterior = servico_atual - 1;
-    }
-
-    document.getElementById("tituloServico").innerHTML = our_services[servico_anterior].title;
-    document.getElementById("textoServicos").innerHTML = our_services[servico_anterior].text;
-    servico_atual = servico_anterior;
-
-  }
-  document.getElementById("botaoProsseguir").onclick = function(){
-
-    if(servico_atual == our_services.length -1){
-        var servico_prosseguir = 0;
-    }else{
-        servico_prosseguir = servico_atual +1;
-    }
-
-    document.getElementById("tituloServico").innerHTML = our_services[servico_prosseguir].title;
-    document.getElementById("textoServicos").innerHTML = our_services[servico_prosseguir].text;
-    servico_atual = servico_prosseguir;
-
-  }
