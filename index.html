@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
     <title>Documento</title>
     <style>
@@ -72,7 +73,25 @@
     </style>
 </head>
 <body>
-    <button id="mostrar-loader">Mostrar</button>
+
+
+
+<!-- Add font awesome icons to buttons (note that the fa-spin class rotates the icon) -->
+
+   
+
+<!---->
+
+
+<div id="container">
+
+
+    <div id="containerRelogio">
+        <div id="relogio"></div>
+    </div>
+  
+    <div id="spiner">
+        <button id="mostrar-loader">Mostrar</button>    
                 
     <div id="spinner-loader" class="spinner-loader" style="display: none">
         <div class="showbox">
@@ -83,28 +102,41 @@
             </div>
         </div>
     </div>
+    </div>
 
-<!---->
-<div id="container">
-
-
-    <div id="relogio"></div>
+    <div id="loginLocalStorage">
+       
+        <div id="sessaoLogin">
+            <h3>Digite o seu nome:</h3>
+            <input type="text" id="nomeUsuario" placeholder="ex: Fabricio"></input>
+            <button id="botaoLogin">Enviar</button>
+        </div>
+    
+        <div id="boasVindas">
+           <div>
+            <p id="boasVindasNomeLogin"></p>
+            <a href="" id="naoEUsuario"></a>
+           </div>
+        </div>
+    
+    </div>
 
 
     <div id="sobre_container">
         <h1 class="tituloh1">About</h1>
         <div id="conteudo_sobre">
             <div id="sobre_titulo"><h1>Missao</h1></div>
-            <div id="sobre_texto"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+            <div id="sobre_texto"><p></p></div>
         </div>
 
         <div id="conjunto_seta_sobre">
-            <div id="seta_sobre_anterior"><</div> <span>|</span>
+            <div id="seta_sobre_anterior"> < 
+            </div> <span>|</span>
         <div id="seta_sobre_frente">></div>
 
         </div>
     </div>
-<!---->
+    <!---->
 
     <div id="container_servicos">
         <h1 class="tituloh1">Serviços</h1>
@@ -115,10 +147,10 @@
         </div>
         
         <div id="texto_servicos"style="background-color: #2A2D34;color:white">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo amet </br>quia fugit aliquam totam magni est. Hic nemo pariatur doloremque dicta officiis repudiandae minus voluptatem repellat cumque! Asperiores, aut fuga. </p>
+            <p></p>
         </div>
 
-    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
